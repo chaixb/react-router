@@ -25,6 +25,8 @@ class Switch extends React.Component {
           // to trigger an unmount/remount for two <Route>s that render the same
           // component at different URLs.
           React.Children.forEach(this.props.children, child => {
+            // 如果找到了匹配的就会停止寻找
+            // 默认路由放在最后一个能够生效
             if (match == null && React.isValidElement(child)) {
               element = child;
 
